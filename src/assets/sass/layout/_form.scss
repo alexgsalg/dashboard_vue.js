@@ -148,14 +148,14 @@
     }
 
     &:hover path {
-      stroke: $accent;
-      fill: $accent;
+      stroke: $primary;
+      fill: $primary;
     }
   }
 }
 .rating input:checked ~ svg.rating_star path {
-  stroke: $accent;
-  fill: $accent;
+  stroke: $primary;
+  fill: $primary;
 }
 .rating .checkmark:after {
   left: 3px;

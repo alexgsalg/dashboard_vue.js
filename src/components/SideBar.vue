@@ -1,24 +1,19 @@
 <template>
   <header class="header" :class="{ open: sideOpen }">
-    <img
-      class="header_logo"
-      src="../assets/img/Brand.svg"
-      alt="Logo Ignição Digital"
-    />
-
-    <div class="header_select">
-      <select name="areas" id="selectArea" @change="selectImg($event)">
-        <option value="areaCliente" selected>Área do cliente</option>
-        <option value="admin">Administração</option>
-        <img src="../assets/img/home.png" alt="" />
-      </select>
-      <span class="header_select__img" :class="selectValue"></span>
-    </div>
-    _
+    <logo classname="header_logo" />
 
     <div class="header_apps">
       <p class="header_apps__title">APPS</p>
       <nav>
+        <router-link
+          to="/cursos"
+          class="header_apps__item"
+          exact-active-class="active"
+        >
+          <books-icon />
+          Cursos
+        </router-link>
+
         <router-link
           to="/emails"
           class="header_apps__item"
@@ -27,15 +22,12 @@
           <email-icon />
           Email
         </router-link>
-        <a href="#" class="header_apps__item">
-          <chat-icon />
-          Conversar
-        </a>
-        <a href="#" class="header_apps__item">
+
+        <a href="#" class="header_apps__item" exact-active-class="active">
           <todo-icon />
-          Todo
+          Todos
         </a>
-        <a href="#" class="header_apps__item">
+        <a href="#" class="header_apps__item" exact-active-class="active">
           <calendar-icon />
           Calendário
         </a>
@@ -44,11 +36,7 @@
 
     <!-- Cabeçalho mobile -->
     <div class="section_mobile">
-      <img
-        class="mobile_logo"
-        src="../assets/img/Brand.svg"
-        alt="Logo Ignição Digital"
-      />
+      <logo classname="mobile_logo" />
       <button id="menu" @click="sideOpen = !sideOpen">
         <i class="fas fa-bars"></i>
       </button>
@@ -57,24 +45,24 @@
 </template>
 
 <script>
-import CalendarIcon from "../assets/icons/CalendarIcon.vue";
-import ChatIcon from "../assets/icons/ChatIcon.vue";
-import EmailIcon from "../assets/icons/EmailIcon.vue";
-import TodoIcon from "../assets/icons/TodoIcon.vue";
-export default {
-  name: "sidebar",
-  components: { EmailIcon, ChatIcon, TodoIcon, CalendarIcon },
-  data: () => ({
-    selectValue: "areaCliente",
-    sideOpen: false,
-  }),
-  methods: {
-    selectImg: function (event) {
-      // console.log();
-      this.selectValue = event.target.value;
+  import BooksIcon from "../assets/icons/BooksIcon.vue";
+  import CalendarIcon from "../assets/icons/CalendarIcon.vue";
+  import EmailIcon from "../assets/icons/EmailIcon.vue";
+  import TodoIcon from "../assets/icons/TodoIcon.vue";
+  import Logo from "../assets/icons/Logo.vue";
+  export default {
+    name: "sidebar",
+    components: { EmailIcon, TodoIcon, CalendarIcon, BooksIcon, Logo },
+    data: () => ({
+      selectValue: "areaCliente",
+      sideOpen: false,
+    }),
+    methods: {
+      selectImg: function (event) {
+        this.selectValue = event.target.value;
+      },
     },
-  },
-};
+  };
 </script>
 
 <style lang="scss"></style>

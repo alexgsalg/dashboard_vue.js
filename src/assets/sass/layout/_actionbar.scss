@@ -21,7 +21,7 @@
         transition: all ease-in-out 250ms;
       }
       &:hover svg path {
-        stroke: $accent;
+        stroke: $primary;
       }
     }
 
@@ -40,7 +40,7 @@
     transition: all ease-in-out 250ms;
 
     &:hover {
-      background-color: $accent;
+      background-color: $primary;
     }
   }
 }

@@ -10,7 +10,7 @@
 
   &_filter {
     flex: 1;
-    // width: 100%;
+    min-width: 300px;
     max-width: 380px;
     margin-top: 2rem;
   }
@@ -112,7 +112,7 @@
     transition: all ease-in-out 250ms;
 
     &:hover {
-      background-color: $accent;
+      background-color: $primary;
       color: $white;
     }
   }
@@ -203,7 +203,7 @@
     transition: all ease-out 150ms;
 
     a:hover {
-      color: $accent;
+      color: $primary;
     }
   }
 
